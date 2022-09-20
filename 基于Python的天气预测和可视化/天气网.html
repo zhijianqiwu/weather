@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/china.js"></script>
+
+    
+</head>
+<body>
+        <style>
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px 16px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .chart-container {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+    </style>
+    <div class="tab">
+            <button class="tablinks" onclick="showChart(event, 'c6a4e375342d4096841d4ab9a1fb1687')">今日长春</button>
+            <button class="tablinks" onclick="showChart(event, 'c797c051d80c47d88eeeaf06a1dca22c')">未来长春</button>
+            <button class="tablinks" onclick="showChart(event, '4ee76a327acf44d9bdc4b5f0ed8f3ce4')">近一周长春</button>
+            <button class="tablinks" onclick="showChart(event, 'd1c2eb3752964a01979e2b4570a84ee4')">今日中国天气</button>
+            <button class="tablinks" onclick="showChart(event, 'ff8437b4836c46ea8031fda29fec1a7d')">今日全国空气质量</button>
+    </div>
+
+    <div class="box">
+                        <style>
+            .fl-table {
+                margin: 20px;
+                border-radius: 5px;
+                font-size: 12px;
+                border: none;
+                border-collapse: collapse;
+                max-width: 100%;
+                white-space: nowrap;
+                word-break: keep-all;
+            }
+
+            .fl-table th {
+                text-align: left;
+                font-size: 20px;
+            }
+
+            .fl-table tr {
+                display: table-row;
+                vertical-align: inherit;
+                border-color: inherit;
+            }
+
+            .fl-table tr:hover td {
+                background: #00d1b2;
+                color: #F8F8F8;
+            }
+
+            .fl-table td, .fl-table th {
+                border-style: none;
+                border-top: 1px solid #dbdbdb;
+                border-left: 1px solid #dbdbdb;
+                border-bottom: 3px solid #dbdbdb;
+                border-right: 1px solid #dbdbdb;
+                padding: .5em .55em;
+                font-size: 15px;
+            }
+
+            .fl-table td {
+                border-style: none;
+                font-size: 15px;
+                vertical-align: center;
+                border-bottom: 1px solid #dbdbdb;
+                border-left: 1px solid #dbdbdb;
+                border-right: 1px solid #dbdbdb;
+                height: 30px;
+            }
+
+            .fl-table tr:nth-child(even) {
+                background: #F8F8F8;
+            }
+        </style>
+        <div id="c6a4e375342d4096841d4ab9a1fb1687" class="chart-container" style="">
+            <p class="title" style="font-size: 18px; font-weight:bold;" > </p>
+            <p class="subtitle" style="font-size: 12px;" > </p>
+            <table class="fl-table">
+    <thead>
+        <tr>
+            <th>日期</th>
+            <th>最高温</th>
+            <th>最低温</th>
+            <th>天气</th>
+            <th>风力风向</th>
+            <th>空气质量指数</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2022-05-10 周二</td>
+            <td>24°</td>
+            <td>9°</td>
+            <td>多云~小雨</td>
+            <td>西南风4级</td>
+            <td>46 优</td>
+        </tr>
+    </tbody>
+</table>
+        </div>
+
+                <div id="c797c051d80c47d88eeeaf06a1dca22c" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_c797c051d80c47d88eeeaf06a1dca22c = echarts.init(
+            document.getElementById('c797c051d80c47d88eeeaf06a1dca22c'), 'white', {renderer: 'canvas'});
+        var option_c797c051d80c47d88eeeaf06a1dca22c = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#5793f3",
+        "#d14a61",
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u6700\u9ad8\u6e29",
+            "yAxisIndex": 0,
+            "legendHoverLink": true,
+            "data": [
+                21.7812,
+                21.036,
+                22.4186,
+                25.3087,
+                24.9081,
+                20.2288,
+                24.018
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u6700\u4f4e\u6e29",
+            "yAxisIndex": 1,
+            "legendHoverLink": true,
+            "data": [
+                11.1788,
+                11.042,
+                12.3377,
+                14.1159,
+                13.3746,
+                9.6404,
+                13.7572
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "line",
+            "name": "\u5929\u6c14\u8d28\u91cf\u6307\u6570 \u4f18(0~50) \u826f(51~100) \u8f7b\u5ea6(101~150) \u4e2d\u5ea6(151~200) \u91cd\u5ea6(201~300)",
+            "connectNulls": false,
+            "yAxisIndex": 2,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2022-05-11",
+                    63.2158
+                ],
+                [
+                    "2022-05-12",
+                    60.4426
+                ],
+                [
+                    "2022-05-13",
+                    60.5824
+                ],
+                [
+                    "2022-05-14",
+                    84.5345
+                ],
+                [
+                    "2022-05-15",
+                    67.0539
+                ],
+                [
+                    "2022-05-16",
+                    45.993
+                ],
+                [
+                    "2022-05-17",
+                    64.6004
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u6700\u9ad8\u6e29",
+                "\u6700\u4f4e\u6e29",
+                "\u5929\u6c14\u8d28\u91cf\u6307\u6570 \u4f18(0~50) \u826f(51~100) \u8f7b\u5ea6(101~150) \u4e2d\u5ea6(151~200) \u91cd\u5ea6(201~300)"
+            ],
+            "selected": {
+                "\u6700\u9ad8\u6e29": true,
+                "\u6700\u4f4e\u6e29": true,
+                "\u5929\u6c14\u8d28\u91cf\u6307\u6570 \u4f18(0~50) \u826f(51~100) \u8f7b\u5ea6(101~150) \u4e2d\u5ea6(151~200) \u91cd\u5ea6(201~300)": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "cross"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2022-05-11",
+                "2022-05-12",
+                "2022-05-13",
+                "2022-05-14",
+                "2022-05-15",
+                "2022-05-16",
+                "2022-05-17"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "\u6700\u4f4e\u6e29",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLine": {
+                "show": true,
+                "onZero": true,
+                "onZeroAxisIndex": 0,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid",
+                    "color": "#5793f3"
+                }
+            },
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value} \u00b0C"
+            },
+            "inverse": false,
+            "position": "right",
+            "offset": 80,
+            "splitNumber": 5,
+            "min": -30,
+            "max": 40,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        },
+        {
+            "type": "value",
+            "name": "\u6700\u9ad8\u6e29",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLine": {
+                "show": true,
+                "onZero": true,
+                "onZeroAxisIndex": 0,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid",
+                    "color": "#d14a61"
+                }
+            },
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value} \u00b0C"
+            },
+            "inverse": false,
+            "position": "right",
+            "offset": 0,
+            "splitNumber": 5,
+            "min": -30,
+            "max": 40,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        },
+        {
+            "type": "value",
+            "name": "\u5929\u6c14\u8d28\u91cf\u6307\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLine": {
+                "show": true,
+                "onZero": true,
+                "onZeroAxisIndex": 0,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid",
+                    "color": "#675bba"
+                }
+            },
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value}"
+            },
+            "inverse": false,
+            "position": "left",
+            "offset": 0,
+            "splitNumber": 5,
+            "min": 0,
+            "max": 300,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "grid": [
+        {
+            "show": false,
+            "zlevel": 0,
+            "z": 2,
+            "left": "5%",
+            "right": "20%",
+            "containLabel": false,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderWidth": 1
+        }
+    ]
+};
+        chart_c797c051d80c47d88eeeaf06a1dca22c.setOption(option_c797c051d80c47d88eeeaf06a1dca22c);
+    </script>
+                <div id="4ee76a327acf44d9bdc4b5f0ed8f3ce4" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_4ee76a327acf44d9bdc4b5f0ed8f3ce4 = echarts.init(
+            document.getElementById('4ee76a327acf44d9bdc4b5f0ed8f3ce4'), 'white', {renderer: 'canvas'});
+        var option_4ee76a327acf44d9bdc4b5f0ed8f3ce4 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#5793f3",
+        "#d14a61",
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u6700\u9ad8\u6e29",
+            "yAxisIndex": 0,
+            "legendHoverLink": true,
+            "data": [
+                29,
+                27,
+                15,
+                16,
+                22,
+                23,
+                24
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u6700\u4f4e\u6e29",
+            "yAxisIndex": 1,
+            "legendHoverLink": true,
+            "data": [
+                18,
+                9,
+                6,
+                7,
+                8,
+                11,
+                9
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "line",
+            "name": "\u5929\u6c14\u8d28\u91cf\u6307\u6570 \u4f18(0~50) \u826f(51~100) \u8f7b\u5ea6(101~150) \u4e2d\u5ea6(151~200) \u91cd\u5ea6(201~300)",
+            "connectNulls": false,
+            "yAxisIndex": 2,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "\u524d\u4e03\u5929",
+                    66
+                ],
+                [
+                    "\u524d\u516d\u5929",
+                    68
+                ],
+                [
+                    "\u524d\u4e94\u5929",
+                    39
+                ],
+                [
+                    "\u524d\u56db\u5929",
+                    27
+                ],
+                [
+                    "\u524d\u4e09\u5929",
+                    43
+                ],
+                [
+                    "\u524d\u4e24\u5929",
+                    55
+                ],
+                [
+                    "\u524d\u4e00\u5929",
+                    46
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u6700\u9ad8\u6e29",
+                "\u6700\u4f4e\u6e29",
+                "\u5929\u6c14\u8d28\u91cf\u6307\u6570 \u4f18(0~50) \u826f(51~100) \u8f7b\u5ea6(101~150) \u4e2d\u5ea6(151~200) \u91cd\u5ea6(201~300)"
+            ],
+            "selected": {
+                "\u6700\u9ad8\u6e29": true,
+                "\u6700\u4f4e\u6e29": true,
+                "\u5929\u6c14\u8d28\u91cf\u6307\u6570 \u4f18(0~50) \u826f(51~100) \u8f7b\u5ea6(101~150) \u4e2d\u5ea6(151~200) \u91cd\u5ea6(201~300)": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "cross"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u524d\u4e03\u5929",
+                "\u524d\u516d\u5929",
+                "\u524d\u4e94\u5929",
+                "\u524d\u56db\u5929",
+                "\u524d\u4e09\u5929",
+                "\u524d\u4e24\u5929",
+                "\u524d\u4e00\u5929"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "\u6700\u4f4e\u6e29",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLine": {
+                "show": true,
+                "onZero": true,
+                "onZeroAxisIndex": 0,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid",
+                    "color": "#5793f3"
+                }
+            },
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value} \u00b0C"
+            },
+            "inverse": false,
+            "position": "right",
+            "offset": 80,
+            "splitNumber": 5,
+            "min": -30,
+            "max": 40,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        },
+        {
+            "type": "value",
+            "name": "\u6700\u9ad8\u6e29",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLine": {
+                "show": true,
+                "onZero": true,
+                "onZeroAxisIndex": 0,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid",
+                    "color": "#d14a61"
+                }
+            },
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value} \u00b0C"
+            },
+            "inverse": false,
+            "position": "right",
+            "offset": 0,
+            "splitNumber": 5,
+            "min": -30,
+            "max": 40,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        },
+        {
+            "type": "value",
+            "name": "\u5929\u6c14\u8d28\u91cf\u6307\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLine": {
+                "show": true,
+                "onZero": true,
+                "onZeroAxisIndex": 0,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid",
+                    "color": "#675bba"
+                }
+            },
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value}"
+            },
+            "inverse": false,
+            "position": "left",
+            "offset": 0,
+            "splitNumber": 5,
+            "min": 0,
+            "max": 300,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "grid": [
+        {
+            "show": false,
+            "zlevel": 0,
+            "z": 2,
+            "left": "5%",
+            "right": "20%",
+            "containLabel": false,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderWidth": 1
+        }
+    ]
+};
+        chart_4ee76a327acf44d9bdc4b5f0ed8f3ce4.setOption(option_4ee76a327acf44d9bdc4b5f0ed8f3ce4);
+    </script>
+                        <style>
+            .fl-table {
+                margin: 20px;
+                border-radius: 5px;
+                font-size: 12px;
+                border: none;
+                border-collapse: collapse;
+                max-width: 100%;
+                white-space: nowrap;
+                word-break: keep-all;
+            }
+
+            .fl-table th {
+                text-align: left;
+                font-size: 20px;
+            }
+
+            .fl-table tr {
+                display: table-row;
+                vertical-align: inherit;
+                border-color: inherit;
+            }
+
+            .fl-table tr:hover td {
+                background: #00d1b2;
+                color: #F8F8F8;
+            }
+
+            .fl-table td, .fl-table th {
+                border-style: none;
+                border-top: 1px solid #dbdbdb;
+                border-left: 1px solid #dbdbdb;
+                border-bottom: 3px solid #dbdbdb;
+                border-right: 1px solid #dbdbdb;
+                padding: .5em .55em;
+                font-size: 15px;
+            }
+
+            .fl-table td {
+                border-style: none;
+                font-size: 15px;
+                vertical-align: center;
+                border-bottom: 1px solid #dbdbdb;
+                border-left: 1px solid #dbdbdb;
+                border-right: 1px solid #dbdbdb;
+                height: 30px;
+            }
+
+            .fl-table tr:nth-child(even) {
+                background: #F8F8F8;
+            }
+        </style>
+        <div id="d1c2eb3752964a01979e2b4570a84ee4" class="chart-container" style="">
+            <p class="title" style="font-size: 18px; font-weight:bold;" > 今日全国各省会城市的天气信息表</p>
+            <p class="subtitle" style="font-size: 12px;" > </p>
+            <table class="fl-table">
+    <thead>
+        <tr>
+            <th>省份</th>
+            <th>最低温</th>
+            <th>最高温</th>
+            <th>天气</th>
+            <th>风力风向</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>黑龙江</td>
+            <td>8°</td>
+            <td>25°</td>
+            <td>多云~阵雨</td>
+            <td>西南风4级</td>
+        </tr>
+        <tr>
+            <td>内蒙古</td>
+            <td>3°</td>
+            <td>16°</td>
+            <td>小雨~晴</td>
+            <td>西北风3级</td>
+        </tr>
+        <tr>
+            <td>吉林</td>
+            <td>9°</td>
+            <td>24°</td>
+            <td>多云~小雨</td>
+            <td>西南风4级</td>
+        </tr>
+        <tr>
+            <td>辽宁</td>
+            <td>10°</td>
+            <td>22°</td>
+            <td>多云~阵雨</td>
+            <td>西南风3级</td>
+        </tr>
+        <tr>
+            <td>河北</td>
+            <td>12°</td>
+            <td>13°</td>
+            <td>雾~阴</td>
+            <td>东南风2级</td>
+        </tr>
+        <tr>
+            <td>天津</td>
+            <td>12°</td>
+            <td>16°</td>
+            <td>多云~阴</td>
+            <td>南风2级</td>
+        </tr>
+        <tr>
+            <td>山西</td>
+            <td>10°</td>
+            <td>22°</td>
+            <td>多云~阴</td>
+            <td>西南风2级</td>
+        </tr>
+        <tr>
+            <td>陕西</td>
+            <td>15°</td>
+            <td>23°</td>
+            <td>多云~阴</td>
+            <td>东北风1级</td>
+        </tr>
+        <tr>
+            <td>甘肃</td>
+            <td>13°</td>
+            <td>22°</td>
+            <td>多云~浮尘</td>
+            <td>东北风3级</td>
+        </tr>
+        <tr>
+            <td>宁夏</td>
+            <td>10°</td>
+            <td>25°</td>
+            <td>多云</td>
+            <td>东风3级</td>
+        </tr>
+        <tr>
+            <td>青海</td>
+            <td>6°</td>
+            <td>17°</td>
+            <td>多云~阴</td>
+            <td>东风2级</td>
+        </tr>
+        <tr>
+            <td>新疆</td>
+            <td>14°</td>
+            <td>27°</td>
+            <td>多云~晴</td>
+            <td>北风2级</td>
+        </tr>
+        <tr>
+            <td>西藏</td>
+            <td>9°</td>
+            <td>20°</td>
+            <td>多云~阵雨</td>
+            <td>西南风2级</td>
+        </tr>
+        <tr>
+            <td>四川</td>
+            <td>18°</td>
+            <td>29°</td>
+            <td>多云~中雨</td>
+            <td>南风2级</td>
+        </tr>
+        <tr>
+            <td>重庆</td>
+            <td>20°</td>
+            <td>28°</td>
+            <td>多云~阴</td>
+            <td>东风2级</td>
+        </tr>
+        <tr>
+            <td>山东</td>
+            <td>14°</td>
+            <td>19°</td>
+            <td>雾~阴</td>
+            <td>西南风2级</td>
+        </tr>
+        <tr>
+            <td>河南</td>
+            <td>12°</td>
+            <td>21°</td>
+            <td>晴~多云</td>
+            <td>南风2级</td>
+        </tr>
+        <tr>
+            <td>江苏</td>
+            <td>16°</td>
+            <td>17°</td>
+            <td>雾~阴</td>
+            <td>东北风3级</td>
+        </tr>
+        <tr>
+            <td>安徽</td>
+            <td>15°</td>
+            <td>19°</td>
+            <td>多云~阴</td>
+            <td>东风2级</td>
+        </tr>
+        <tr>
+            <td>湖北</td>
+            <td>15°</td>
+            <td>19°</td>
+            <td>雾~阴</td>
+            <td>东北风3级</td>
+        </tr>
+        <tr>
+            <td>浙江</td>
+            <td>16°</td>
+            <td>20°</td>
+            <td>小雨~阴</td>
+            <td>东风1级</td>
+        </tr>
+        <tr>
+            <td>福建</td>
+            <td>20°</td>
+            <td>21°</td>
+            <td>小雨</td>
+            <td>东北风1级</td>
+        </tr>
+        <tr>
+            <td>江西</td>
+            <td>18°</td>
+            <td>19°</td>
+            <td>中雨~阴</td>
+            <td>北风3级</td>
+        </tr>
+        <tr>
+            <td>湖南</td>
+            <td>15°</td>
+            <td>20°</td>
+            <td>中雨~阴</td>
+            <td>西北风3级</td>
+        </tr>
+        <tr>
+            <td>贵州</td>
+            <td>14°</td>
+            <td>24°</td>
+            <td>多云~阵雨</td>
+            <td>东北风2级</td>
+        </tr>
+        <tr>
+            <td>广西</td>
+            <td>22°</td>
+            <td>27°</td>
+            <td>小雨~中雨</td>
+            <td>东南风2级</td>
+        </tr>
+        <tr>
+            <td>海南</td>
+            <td>25°</td>
+            <td>31°</td>
+            <td>多云</td>
+            <td>东南风3级</td>
+        </tr>
+        <tr>
+            <td>上海</td>
+            <td>18°</td>
+            <td>21°</td>
+            <td>多云~阴</td>
+            <td>东南风3级</td>
+        </tr>
+        <tr>
+            <td>广东</td>
+            <td>23°</td>
+            <td>27°</td>
+            <td>小雨~暴雨</td>
+            <td>东南风3级</td>
+        </tr>
+        <tr>
+            <td>云南</td>
+            <td>15°</td>
+            <td>25°</td>
+            <td>多云</td>
+            <td>西南风2级</td>
+        </tr>
+        <tr>
+            <td>台湾</td>
+            <td>24°</td>
+            <td>28°</td>
+            <td>阴~小雨</td>
+            <td>西南风2级</td>
+        </tr>
+    </tbody>
+</table>
+        </div>
+
+                <div id="ff8437b4836c46ea8031fda29fec1a7d" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_ff8437b4836c46ea8031fda29fec1a7d = echarts.init(
+            document.getElementById('ff8437b4836c46ea8031fda29fec1a7d'), 'white', {renderer: 'canvas'});
+        var option_ff8437b4836c46ea8031fda29fec1a7d = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "map",
+            "name": "\u5929\u6c14\u8d28\u91cf\u6307\u6570 \u4f18(0~50) \u826f(51~100) \u8f7b\u5ea6(101~150) \u4e2d\u5ea6(151~200) \u91cd\u5ea6(201~300)",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "mapType": "china",
+            "data": [
+                {
+                    "name": "\u9ed1\u9f99\u6c5f",
+                    "value": 65
+                },
+                {
+                    "name": "\u5185\u8499\u53e4",
+                    "value": 38
+                },
+                {
+                    "name": "\u5409\u6797",
+                    "value": 46
+                },
+                {
+                    "name": "\u8fbd\u5b81",
+                    "value": 56
+                },
+                {
+                    "name": "\u6cb3\u5317",
+                    "value": 97
+                },
+                {
+                    "name": "\u5929\u6d25",
+                    "value": 63
+                },
+                {
+                    "name": "\u5c71\u897f",
+                    "value": 109
+                },
+                {
+                    "name": "\u9655\u897f",
+                    "value": 41
+                },
+                {
+                    "name": "\u7518\u8083",
+                    "value": 92
+                },
+                {
+                    "name": "\u5b81\u590f",
+                    "value": 74
+                },
+                {
+                    "name": "\u9752\u6d77",
+                    "value": 44
+                },
+                {
+                    "name": "\u65b0\u7586",
+                    "value": 55
+                },
+                {
+                    "name": "\u897f\u85cf",
+                    "value": 31
+                },
+                {
+                    "name": "\u56db\u5ddd",
+                    "value": 52
+                },
+                {
+                    "name": "\u91cd\u5e86",
+                    "value": 42
+                },
+                {
+                    "name": "\u5c71\u4e1c",
+                    "value": 66
+                },
+                {
+                    "name": "\u6cb3\u5357",
+                    "value": 48
+                },
+                {
+                    "name": "\u6c5f\u82cf",
+                    "value": 48
+                },
+                {
+                    "name": "\u5b89\u5fbd",
+                    "value": 47
+                },
+                {
+                    "name": "\u6e56\u5317",
+                    "value": 46
+                },
+                {
+                    "name": "\u6d59\u6c5f",
+                    "value": 62
+                },
+                {
+                    "name": "\u798f\u5efa",
+                    "value": 30
+                },
+                {
+                    "name": "\u6c5f\u897f",
+                    "value": 32
+                },
+                {
+                    "name": "\u6e56\u5357",
+                    "value": 47
+                },
+                {
+                    "name": "\u8d35\u5dde",
+                    "value": 25
+                },
+                {
+                    "name": "\u5e7f\u897f",
+                    "value": 26
+                },
+                {
+                    "name": "\u6d77\u5357",
+                    "value": 27
+                },
+                {
+                    "name": "\u4e0a\u6d77",
+                    "value": 31
+                },
+                {
+                    "name": "\u5e7f\u4e1c",
+                    "value": 29
+                },
+                {
+                    "name": "\u4e91\u5357",
+                    "value": 31
+                },
+                {
+                    "name": "\u53f0\u6e7e",
+                    "value": 8
+                }
+            ],
+            "roam": true,
+            "aspectScale": 0.75,
+            "nameProperty": "name",
+            "selectedMode": false,
+            "zoom": 1,
+            "mapValueCalculation": "sum",
+            "showLegendSymbol": true,
+            "emphasis": {}
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u5929\u6c14\u8d28\u91cf\u6307\u6570 \u4f18(0~50) \u826f(51~100) \u8f7b\u5ea6(101~150) \u4e2d\u5ea6(151~200) \u91cd\u5ea6(201~300)"
+            ],
+            "selected": {
+                "\u5929\u6c14\u8d28\u91cf\u6307\u6570 \u4f18(0~50) \u826f(51~100) \u8f7b\u5ea6(101~150) \u4e2d\u5ea6(151~200) \u91cd\u5ea6(201~300)": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u4eca\u65e5\u4e2d\u56fd\u7a7a\u6c14\u8d28\u91cf",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 0,
+        "max": 300,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_ff8437b4836c46ea8031fda29fec1a7d.setOption(option_ff8437b4836c46ea8031fda29fec1a7d);
+    </script>
+    </div>
+
+    <script>
+    </script>
+    <script>
+        (function() {
+            containers = document.getElementsByClassName("chart-container");
+            if(containers.length > 0) {
+                containers[0].style.display = "block";
+            }
+        })()
+
+        function showChart(evt, chartID) {
+            let containers = document.getElementsByClassName("chart-container");
+            for (let i = 0; i < containers.length; i++) {
+                containers[i].style.display = "none";
+            }
+
+            let tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = "tablinks";
+            }
+
+            document.getElementById(chartID).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
